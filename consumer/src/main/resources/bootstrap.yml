@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: consumer
+  cloud:
+    nacos:
+      config:
+        group: dubo-provider
+        prefix: ${spring.application.name}
+        file-extension: yml
+        server-addr: 192.168.237.1:8850
+      discovery:
+        server-addr: 192.168.237.1:8850

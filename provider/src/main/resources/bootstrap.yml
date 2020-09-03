@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: provider
+  cloud:
+    nacos:
+      config:
+        group: dubo-provider
+        server-addr: 192.168.237.1:8850
+        file-extension: yml

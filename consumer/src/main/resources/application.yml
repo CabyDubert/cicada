@@ -1,0 +1,31 @@
+# 应用服务 WEB 访问端口
+server:
+  port: 8090
+spring:
+  application:
+    name: consumer
+  cloud:
+    nacos:
+      discovery:
+        server-addr:  http://192.168.237.1:8850
+    sentinel:
+      transport:
+        dashboard: 192.168.237.1:9100
+      filter:
+        url-patterns: /*
+management:
+  endpoints:
+    jmx:
+      exposure:
+        include: '*'
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
+  # Actuator Web 访问端口
+  server:
+    port: 8091
+# spring cloud access&secret config
+# 可以访问如下地址查看: https://usercenter.console.aliyun.com/#/manage/ak

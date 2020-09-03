@@ -1,0 +1,22 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: provider
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.237.1:8850
+management:
+  server:
+    port: 8081
+  endpoints:
+    jmx:
+      exposure:
+        include: '*'
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
