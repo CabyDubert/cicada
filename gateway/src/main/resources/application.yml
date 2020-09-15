@@ -1,0 +1,35 @@
+server:
+  port: 8070
+# Actuator Web 访问端口
+#management.server.port=8081
+#management.health.sentinel.enabled=false
+
+spring:
+  application:
+    name: gateway
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.237.1:8850
+        register-enabled: true
+    sentinel:
+      transport:
+        dashboard: 192.168.237.1:9100
+      eager: true
+    #网关
+    gateway:
+      discovery:
+        locator:
+          #是将请求路径上的服务名配置为小写（因为服务注册的时候，向注册中心注册时将服务名转成大写的了
+          lower-case-service-id: true
+          #表明gateway开启服务注册和发现的功能，并且spring cloud gateway自动根据服务发现为每一个服务创建了一个router，
+          #这个router将以服务名开头的请求路径转发到对应的服务
+          enabled: true
+      routes:
+        - id: consumer
+          uri: http://192.168.237.1:8090/
+          predicates:
+            - Path=/consumer/**  #以api/consumer/开头的请求都负载到consumer服务
+#          filters:
+#            - StripPrefix=2
+

@@ -1,3 +1,4 @@
 rootProject.name = 'cicada'
 include 'provider'
 include 'consumer'
+include 'gateway'

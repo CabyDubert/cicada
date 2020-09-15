@@ -11,8 +11,8 @@ spring:
     sentinel:
       transport:
         dashboard: 192.168.237.1:9100
-      filter:
-        url-patterns: /*
+#      filter:
+#        url-patterns: /*
 management:
   endpoints:
     jmx:
