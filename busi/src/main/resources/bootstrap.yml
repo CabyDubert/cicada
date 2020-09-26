@@ -1,9 +1,9 @@
 spring:
   application:
-    name: provider
+    name: busi
   cloud:
     nacos:
       config:
-        group: dubo-provider
+        group: dubo-busi
         server-addr: localhost:8848
         file-extension: yml

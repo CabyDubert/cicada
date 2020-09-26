@@ -3,14 +3,14 @@ spring:
     include: druid,mybatisplus
     active: dev
   application:
-    name: provider
+    name: busi
   cloud:
     nacos:
       discovery:
         server-addr: localhost:8848
 management:
   server:
-    port: 8081
+    port: 8082
   endpoints:
     jmx:
       exposure:

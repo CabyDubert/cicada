@@ -15,8 +15,6 @@ repositories {
 dependencies {
     implementation 'com.alibaba:fastjson:1.2.68'
     compileOnly 'org.projectlombok:lombok'
-    //添加redis
-    implementation 'org.springframework.boot:spring-boot-starter-data-redis:2.3.0.RELEASE'
     //数据库
     implementation 'com.alibaba:druid-spring-boot-starter:1.1.22'
     runtimeOnly 'mysql:mysql-connector-java'
